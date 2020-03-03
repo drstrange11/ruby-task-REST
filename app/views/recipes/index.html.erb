@@ -1,0 +1,20 @@
+<h1>Recipes for <%= @search %> </h1>
+
+<table>
+    <thead> 
+    <tr> 
+    <th> Photo </th>
+    <th> Title </th>
+    <th> Ingredients </th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @recipes.each do |recipe| %>
+    <tr> 
+    <td> <%= image_tag(recipe["thumbnail"]) %></td>
+    <td> <%= link_to(recipe["title"], recipe["href"]) %> </td>
+    <td> <%= recipe["ingredients"] %> </td>
+    </tr>
+    <% end %>
+    </tbody>
+</table>
